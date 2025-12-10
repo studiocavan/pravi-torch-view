@@ -5,6 +5,10 @@ A PyTorch tensor visualization tool.
 ## Installation
 
 ```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Install package in editable mode
 pip install -e .
 ```
 
