@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
-from pravi_torch_view.model_compare import compare_models
+from pravi_torch_view import compare_models, plot_model_comparison
 
 
 # Simple CNN with 1 conv layer
@@ -134,8 +134,19 @@ def main():
         }
     }
 
-    # Visualize comparison
+    # Visualize comparison (text-based)
+    print("\n" + "="*70)
+    print("TEXT-BASED VISUALIZATION")
+    print("="*70)
     compare_models(results)
+
+    # Visualize comparison (matplotlib)
+    print("\n" + "="*70)
+    print("GRAPHICAL VISUALIZATION (matplotlib)")
+    print("="*70)
+    print("Generating matplotlib visualization...")
+    plot_model_comparison(results, save_path='model_comparison.png')
+    print("You can also view the plot interactively by not providing save_path")
 
 
 if __name__ == '__main__':

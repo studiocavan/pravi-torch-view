@@ -79,6 +79,32 @@ compare_models(results)
 ======================================================================
 ```
 
+### Matplotlib Visualization
+
+Create beautiful graphical visualizations using matplotlib:
+
+```python
+from pravi_torch_view import plot_model_comparison
+
+# Same results dictionary as above
+results = {
+    'Shallow CNN': {'accuracy': 0.87, 'loss': 0.421, 'params': 31370},
+    'Deep CNN': {'accuracy': 0.94, 'loss': 0.198, 'params': 103050}
+}
+
+# Display interactive plot
+plot_model_comparison(results)
+
+# Or save to file
+plot_model_comparison(results, save_path='comparison.png')
+```
+
+This creates a comprehensive 4-panel visualization showing:
+- **Accuracy comparison** with the best model highlighted
+- **Loss comparison** (lower is better)
+- **Model size** (parameter count)
+- **Accuracy vs Complexity** scatter plot
+
 ### Real-World Example
 
 See a complete working example comparing two CNN models:
@@ -87,7 +113,7 @@ See a complete working example comparing two CNN models:
 python examples/model_comparison_example.py
 ```
 
-This example trains and compares a shallow vs. deep CNN on synthetic MNIST-like data.
+This example trains and compares a shallow vs. deep CNN on synthetic MNIST-like data, showing both text and graphical visualizations.
 
 ## Development
 
